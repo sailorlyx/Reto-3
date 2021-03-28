@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ContainerComponent } from '../container/container.component';
 import { Task } from '../models/task.model';
 
 @Component({
@@ -8,9 +9,14 @@ import { Task } from '../models/task.model';
 })
 export class TaskComponent implements OnInit {
   @Input() public task: Task;
+  @Input() public container: ContainerComponent;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  public remove() {
+    this.container.removeTask(this.task);
+  }
 }

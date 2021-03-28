@@ -14,8 +14,21 @@
 .li-priority {
   height: 15px;
   width: 15px;
-  background: lightpink;
   position: absolute;
   right: 0;
   border-radius: 0 10px 0 10px;
+}
+
+.li-priority-1 {
+  background: rgb(255, 73, 73);
+
+}
+
+.li-priority-2 {
+  background: rgb(197, 129, 197);;
+
+}
+
+.li-priority-3 {
+  background: lightpink;
 }

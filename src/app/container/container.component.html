@@ -1,5 +1,6 @@
 <div class="li-todo-list">
   <h3>{{ title }}</h3>
   <img class="li-todo-image" [src]="imgSrc" />
-  <app-task [task]="currentTask" *ngFor="let currentTask of tasks"></app-task>
+  <img class="li-new-task" src="/resources/images/circle.svg" (click)="newTask()">
+  <app-task [task]="currentTask" [container]="this" *ngFor="let currentTask of tasks"></app-task>
 </div>

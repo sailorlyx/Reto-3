@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ContainerComponent } from './container/container.component';
+import { TaskdialogComponent } from './taskdialog/taskdialog.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ContainerComponent } from './container/container.component';
     AppComponent,
     HeaderComponent,
     ContainerComponent,
-    TaskComponent
+    TaskComponent,
+    TaskdialogComponent
   ],
   imports: [
     BrowserModule,

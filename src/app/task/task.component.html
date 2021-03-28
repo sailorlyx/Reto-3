@@ -1,6 +1,6 @@
 <div class="li-task">
-  <div class="li-cancel">×</div>
-  <div class="li-priority"></div>
+  <div class="li-cancel" (click)="remove()">×</div>
+  <div class="li-priority" [ngClass]="'li-priority-' + task.Priority"></div>
   <h4>{{ task.Title }}</h4>
   <p>{{ task.Description }}</p>
 </div>
