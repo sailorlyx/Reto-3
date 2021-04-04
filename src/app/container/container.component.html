@@ -1,7 +1,7 @@
-<div class="li-todo-list">
+<div class="li-todo-list" (drop)="soltar($event)" (dragover)="permitirDrop($event)">
   <h3>{{ title }}</h3>
   <img class="li-todo-image" [src]="imgSrc" />
-  <img class="li-new-task" src="/resources/images/circle.svg" (click)="newTask()">
-  <app-task [task]="currentTask" [container]="this" draggable="true" ondragstart="agarrar(event)"
-    *ngFor="let currentTask of tasks"></app-task>
+  <img *ngIf="canAddTasks" class="li-new-task" src="/resources/images/circle.svg" (click)="newTask()">
+  <app-task [ngClass]="taskClasses" [task]="currentTask" [container]="this" draggable="true"
+    (dragstart)="agarrar($event, currentTask)" *ngFor="let currentTask of tasks"></app-task>
 </div>

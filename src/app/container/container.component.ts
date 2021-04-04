@@ -9,6 +9,8 @@ import { Task } from '../models/task.model';
 export class ContainerComponent implements OnInit {
   @Input() public title: string = '';
   @Input() public imgSrc: string = '';
+  @Input() public taskClasses: string = '';
+  @Input() public canAddTasks: boolean = false;
   public tasks: Task[] = [];
 
   constructor() { }
@@ -50,7 +52,17 @@ export class ContainerComponent implements OnInit {
     this.tasks.splice(index, 1);
   }
 
-  public agarrar(event: any) {
-    console.log(event);
+  public agarrar(event: DragEvent, task: Task) {
+    console.log(task);
+    //event.dataTransfer.set//
+  }
+
+  public soltar(event: DragEvent) {
+    console.log('drop');
+  }
+
+  public permitirDrop(event: DragEvent) {
+    console.log('permitir');
+    event.preventDefault();
   }
 }

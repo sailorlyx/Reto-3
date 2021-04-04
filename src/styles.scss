@@ -25,3 +25,12 @@ app-container:nth-child(even) .li-todo-list {
   cursor: pointer;
   color: rgb(255, 109, 109);
 }
+
+.li-task-done .li-priority {
+  background:rgb(184, 255, 112) !important;
+}
+
+.li-task-done {
+  text-decoration-line: line-through;
+  color:grey;
+}
