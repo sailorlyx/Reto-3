@@ -49,4 +49,8 @@ export class ContainerComponent implements OnInit {
   public removeItem(index: number) {
     this.tasks.splice(index, 1);
   }
+
+  public agarrar(event: any) {
+    console.log(event);
+  }
 }

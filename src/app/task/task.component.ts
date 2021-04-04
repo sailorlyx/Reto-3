@@ -19,4 +19,8 @@ export class TaskComponent implements OnInit {
   public remove() {
     this.container.removeTask(this.task);
   }
+
+  public agarrar() {
+    console.log('e');
+  }
 }
