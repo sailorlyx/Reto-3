@@ -7,6 +7,8 @@ import { Task } from '../models/task.model';
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
+  private static currentGrabOrigin: ContainerComponent;
+
   @Input() public title: string = '';
   @Input() public imgSrc: string = '';
   @Input() public taskClasses: string = '';
@@ -54,11 +56,18 @@ export class ContainerComponent implements OnInit {
 
   public agarrar(event: DragEvent, task: Task) {
     console.log(task);
-    //event.dataTransfer.set//
+    event.dataTransfer?.setData('task', JSON.stringify(task));
+    ContainerComponent.currentGrabOrigin = this;
   }
 
   public soltar(event: DragEvent) {
     console.log('drop');
+    let data = event.dataTransfer?.getData('task');
+    if (data != undefined) {
+      let task: Task = JSON.parse(data);
+      ContainerComponent.currentGrabOrigin.removeTask(task);
+      this.tasks.push(task);
+    }
   }
 
   public permitirDrop(event: DragEvent) {
